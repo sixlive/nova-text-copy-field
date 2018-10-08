@@ -1,0 +1,39 @@
+{
+    "name": "sixlive/nova-text-copy-field",
+    "description": "Laravel Nova text field with click to copy support",
+    "homepage": "https://github.com/sixlive/nova-text-copy-field",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "authors": [
+        {
+            "name": "TJ Miller",
+            "email": "oss@tjmiller.co",
+            "homepage": "https://www.tjmiller.me",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "laravel/nova": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sixlive\\TextCopy\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sixlive\\TextCopy\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
