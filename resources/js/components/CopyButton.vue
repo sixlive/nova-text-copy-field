@@ -1,17 +1,19 @@
 <template>
     <div>
-        <span v-show="isNotDirty">
+        <div v-show="isNotDirty">
             <clipboard
                 @success="handleSuccess"
                 @error="handleError"
                 :value="value" />
-        </span>
-        <span v-show="success">
+        </div>
+
+        <div v-show="success">
             <success-icon />
-        </span>
-        <span v-show="error">
+        </div>
+
+        <div v-show="error">
             <error-icon />
-        </span>
+        </div>
     </div>
 </template>
 
