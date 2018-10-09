@@ -10,10 +10,11 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "clipboard": "^2.0.1",
         "cross-env": "^5.0.0",
         "laravel-mix": "^1.0",
         "laravel-nova": "^1.0",
-        "vue-clipboard2": "^0.2.1"
+        "shortid": "^2.2.13"
     },
     "dependencies": {
         "vue": "^2.5.0"
