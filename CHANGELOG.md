@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [Unreleased]
 ### Changed
 * Swapped underlying cliboard libaray to use cliboard.js directly.
+* Extracted components for felxibility and cleanup
 
 ## [0.1.0] - 2018-10-08
 Initial release
