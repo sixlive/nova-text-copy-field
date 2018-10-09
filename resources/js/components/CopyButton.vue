@@ -1,51 +1,57 @@
 <template>
-    <button
-        @click.stop="handleClick"
-        type="button"
-        :ref="identifier"
-        class="text-70 appearance-none outline-none focus:outline-none cursor-pointer hover:text-primary block">
-        <clipboard-icon />
-    </button>
+    <div>
+        <span v-show="isNotDirty">
+            <clipboard
+                @success="handleSuccess"
+                @error="handleError"
+                :value="value" />
+        </span>
+        <span v-show="success">
+            <success-icon />
+        </span>
+        <span v-show="error">
+            <error-icon />
+        </span>
+    </div>
 </template>
 
 <script>
-import shortid from 'shortid'
-import Clipboard from 'clipboard'
-import ClipboardIcon from './Icons/Clipboard'
+import Clipboard from './Clipboard'
+import SuccessIcon from './Icons/Success'
+import ErrorIcon from './Icons/Error'
 
 export default {
-    components: { ClipboardIcon },
     props: ['value'],
+    components: {
+        Clipboard,
+        SuccessIcon,
+        ErrorIcon
+    },
     data () {
         return {
-            clipboard: null,
-            identifier: null
+            success: false,
+            error: false,
         }
     },
-    created () {
-        this.identifier = shortid.generate()
-    },
-    mounted () {
-        const el = this.$refs[this.identifier]
-        this.clipboard = new Clipboard(el, {
-            text: () => this.value.trim()
-        })
-
-        this.clipboard.on('success', this.handleSuccess)
-        this.clipboard.on('error', this.handleError)
-    },
-    beforeDestroy() {
-        this.clipboard.destroy()
-    },
     methods: {
-        handleClick (e) {
-            this.$emit('click', e)
-        },
         handleSuccess () {
-            this.$emit('success')
+            this.reset()
+            this.success = true
         },
         handleError () {
-            this.$emit('error')
+            this.reset()
+            this.error = true
+        },
+        reset () {
+            setTimeout(() => {
+                this.success = false
+                this.error = false
+            }, 2300)
+        }
+    },
+    computed: {
+        isNotDirty () {
+            return ! this.success && ! this.error
         }
     }
 }
