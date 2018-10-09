@@ -13,8 +13,8 @@
 
 <script>
 import CopyButton from './CopyButton'
-import SuccessIcon from './SuccessIcon'
-import ErrorIcon from './ErrorIcon'
+import SuccessIcon from './Icons/Success'
+import ErrorIcon from './Icons/Error'
 
 export default {
     components: {
