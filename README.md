@@ -8,9 +8,7 @@ A Laravel Nova text field with click to copy support. This field behaves just li
 
 This package can also be found on [Nova Packages](https://novapackages.com/packages/sixlive/nova-text-copy-field).
 
-<details><summary>See it in action!</summary>
-<p><img src=".docs/animated.gif" alt="animated screenshot" /></p>
-</details>
+![animated screenshot](.docs/animated.gif)
 
 ## Installation
 
