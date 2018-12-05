@@ -48,7 +48,7 @@ When the field value has been successfully copied to the user's clipboard.
 ![success](.docs/success.png)
 
 ### Error State
-When there is an error adding the field vallue to the user's clipboard.
+When there is an error adding the field value to the user's clipboard.
 ![error](.docs/error.png)
 
 ### Truncated Display Value
