@@ -15,6 +15,7 @@ class TextCopy extends Field
 
     /**
      * Truncate the fields displayed value.
+     *
      * @param  int $length
      * @return \Sixlive\TextCopy\TextCopy
      */
