@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 ### Added
-* Add the ability to mask the fields display value
+* The ability to mask the fields display value
 
 ## [1.1.0] - 2018-12-05
 ### Added
