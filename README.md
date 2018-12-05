@@ -39,6 +39,7 @@ TextCopy::make('Some Long Field')
 ```
 
 ### Masking the field value
+This works great for secrets like API Keys.
 
 ```php
 TextCopy::make('Some Secret String', 'some_secret_string')
