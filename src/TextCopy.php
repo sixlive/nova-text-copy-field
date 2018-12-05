@@ -26,7 +26,6 @@ class TextCopy extends Field
         return $this;
     }
 
-
     /**
      * Apply a mask to the display.
      *
