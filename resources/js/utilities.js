@@ -1,24 +1,24 @@
-export const filterField = function (field) {
+export default function filterField (field) {
     return [
-        fieldTruncator,
+        truncateField,
         maskField
-    ].reduce((field, fn) => fn(field), {field, display: field.value})
+    ].reduce((field, fn) => fn(field), [field, field.value])[1]
 }
 
-export const fieldTruncator = function ({ field, display }) {
-    return {
+export function truncateField ([field, display]) {
+    return [
         field,
-        display: display && field.truncate > 0
+        display && field.truncate > 0
             ?  `${display.substring(0, field.truncate)}...`
             : display
-    }
+    ]
 }
 
-export const maskField = function ({ field, display }) {
-    return {
+export function maskField ([ field, display ]) {
+    return [
         field,
-        display: field.masked
+        field.masked
             ? field.masked_character.repeat(display.length)
             : display
-        }
+    ]
 }

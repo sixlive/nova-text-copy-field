@@ -9,7 +9,7 @@
 
 <script>
 import CopyButton from './CopyButton'
-import { filterField } from '../utilities'
+import filterField from '../utilities'
 
 export default {
     props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -18,7 +18,7 @@ export default {
     },
     computed: {
         fieldDisplayValue() {
-            return filterField(this.field).display
+            return filterField(this.field)
         }
     }
 }
