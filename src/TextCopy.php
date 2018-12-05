@@ -12,4 +12,17 @@ class TextCopy extends Field
      * @var string
      */
     public $component = 'text-copy';
+
+    /**
+     * Truncate the fields displayed value.
+     *
+     * @param  int $length
+     * @return \Sixlive\TextCopy\TextCopy
+     */
+    public function truncate($length = 0)
+    {
+        $this->withMeta(['truncate' => $length]);
+
+        return $this;
+    }
 }

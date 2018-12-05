@@ -30,6 +30,14 @@ public function fields(Request $request)
 }
 ```
 
+### Truncating long strings
+In some cases you may want to truncate the display of a fields value but allow still copy the full value. You can use the `truncate()` method to accomplish this.
+
+```php
+TextCopy::make('Some Long Field')
+    ->truncate(100);
+```
+
 ## Screenshots
 ### Default State
 ![default](.docs/default.png)
@@ -42,6 +50,9 @@ When the field value has been successfully copied to the user's clipboard.
 ### Error State
 When there is an error adding the field vallue to the user's clipboard.
 ![error](.docs/error.png)
+
+### Truncated Display Value
+![truncated display](.docs/truncated-screenshot.png)
 
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
