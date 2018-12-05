@@ -25,4 +25,20 @@ class TextCopy extends Field
 
         return $this;
     }
+
+    /**
+     * Apply a mask to the display.
+     *
+     * @param  string $mask
+     * @return \Sixlive\TextCopy\TextCopy
+     */
+    public function mask($character = '*')
+    {
+        $this->withMeta([
+            'masked' => true,
+            'masked_character' => $character,
+        ]);
+
+        return $this;
+    }
 }

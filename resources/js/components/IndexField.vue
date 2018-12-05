@@ -7,14 +7,14 @@
 
 <script>
 import CopyButton from './CopyButton'
-import { fieldTruncator } from '../utilities'
+import filterField from '../utilities'
 
 export default {
     components: { CopyButton },
     props: ['resourceName', 'field'],
      computed: {
         fieldDisplayValue() {
-            return fieldTruncator(this.field)
+            return filterField(this.field)
         }
     }
 }
