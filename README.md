@@ -35,7 +35,15 @@ In some cases you may want to truncate the display of a fields value but allow s
 
 ```php
 TextCopy::make('Some Long Field')
-    ->truncate(100);
+    ->truncate(100)
+```
+
+### Masking the field value
+
+```php
+TextCopy::make('Some Secret String', 'some_secret_string')
+    ->mask('❌') // default '*'
+    ->truncate(5)
 ```
 
 ## Screenshots
@@ -53,6 +61,9 @@ When there is an error adding the field vallue to the user's clipboard.
 
 ### Truncated Display Value
 ![truncated display](.docs/truncated-screenshot.png)
+
+### Masked Display Value
+![masked display](.docs/masked-screenshot.png)
 
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

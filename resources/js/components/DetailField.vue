@@ -9,7 +9,7 @@
 
 <script>
 import CopyButton from './CopyButton'
-import { fieldTruncator } from '../utilities'
+import { filterField } from '../utilities'
 
 export default {
     props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -18,7 +18,7 @@ export default {
     },
     computed: {
         fieldDisplayValue() {
-            return fieldTruncator(this.field)
+            return filterField(this.field).display
         }
     }
 }
