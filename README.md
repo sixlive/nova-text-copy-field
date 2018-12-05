@@ -52,7 +52,7 @@ When there is an error adding the field vallue to the user's clipboard.
 ![error](.docs/error.png)
 
 ### Truncated Display Value
-![truncated display](./docs/truncated-screenshot.png)
+![truncated display](.docs/truncated-screenshot.png)
 
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
