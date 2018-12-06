@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.2.1] - 2018-12-06
+### Changed
+* Removed some unnecessary export statements ([#15](https://github.com/sixlive/nova-text-copy-field/pull/15))
+
 ## [1.2.0] - 2018-12-05
 ### Added
 * The ability to mask the fields display value ([#13](https://github.com/sixlive/nova-text-copy-field/pull/13)]
