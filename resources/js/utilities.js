@@ -5,7 +5,7 @@ export default function filterField (field) {
     ].reduce((field, fn) => fn(field), [field, field.value])[1]
 }
 
-export function truncateField ([field, display]) {
+function truncateField ([field, display]) {
     return [
         field,
         display && field.truncate > 0
@@ -14,7 +14,7 @@ export function truncateField ([field, display]) {
     ]
 }
 
-export function maskField ([ field, display ]) {
+function maskField ([ field, display ]) {
     return [
         field,
         field.masked
