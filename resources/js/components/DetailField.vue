@@ -3,7 +3,7 @@
         <div slot="value" class="flex">
             <div class="flex-no-shrink">{{ fieldDisplayValue }}</div>
             <copy-button
-                :value="field.value"
+                :value="copyFieldValue"
                 :title="copyButtonTitleValue"
                 class="w-4 mx-3" />
         </div>
@@ -12,7 +12,7 @@
 
 <script>
 import CopyButton from './CopyButton'
-import { filterField, copyButtonTitle } from '../utilities'
+import { filterField, copyButtonTitle, copyValue } from '../utilities'
 
 export default {
     props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -25,6 +25,9 @@ export default {
         },
         copyButtonTitleValue() {
             return copyButtonTitle(this.field)
+        },
+        copyFieldValue() {
+            return copyValue(this.field)
         }
     }
 }

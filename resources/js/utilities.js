@@ -27,4 +27,8 @@ export function copyButtonTitle (field) {
     return field.copy_button_title || `Copy ${field.name}`
 }
 
+export function copyValue (field) {
+    return field.copy_value || field.value
+}
+
 export default filterField

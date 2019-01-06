@@ -2,6 +2,7 @@
 
 namespace Sixlive\TextCopy;
 
+use Closure;
 use Laravel\Nova\Fields\Field;
 
 class TextCopy extends Field
@@ -46,6 +47,17 @@ class TextCopy extends Field
     {
         $this->withMeta([
             'copy_button_title' => $title,
+        ]);
+
+        return $this;
+    }
+
+    public function copyValue($value)
+    {
+        $this->withMeta([
+            'copy_value' => $value instanceOf Closure
+                ? $value($this->value)
+                : $value,
         ]);
 
         return $this;
