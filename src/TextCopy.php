@@ -41,4 +41,13 @@ class TextCopy extends Field
 
         return $this;
     }
+
+    public function copyButtonTitle($title = '')
+    {
+        $this->withMeta([
+            'copy_button_title' => $title
+        ]);
+
+        return $this;
+    }
 }
