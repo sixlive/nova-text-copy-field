@@ -55,7 +55,7 @@ class TextCopy extends Field
     public function copyValue($value)
     {
         $this->withMeta([
-            'copy_value' => $value instanceOf Closure
+            'copy_value' => $value instanceof Closure
                 ? $value($this->value)
                 : $value,
         ]);
