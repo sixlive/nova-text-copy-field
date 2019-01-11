@@ -1,6 +1,5 @@
 ---
 name: Feature Request
-title: '[Feature] '
 about: Request a new feature or enhancement
 ---
 
