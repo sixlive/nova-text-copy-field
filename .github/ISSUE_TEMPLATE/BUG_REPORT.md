@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve this project
 ---
 
-# Preflight
+## Preflight
 - [ ] I have searched the repo for this duplicates
 
 ## Description
