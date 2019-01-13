@@ -23,7 +23,6 @@
         "babel-core": "^6.26.3",
         "babel-eslint": "^10.0.1",
         "babel-loader": "^8.0.5",
-        "babel-plugin-transform-runtime": "^6.23.0",
         "babel-preset-vue": "^2.0.2",
         "clipboard": "^2.0.1",
         "cross-env": "^5.0.0",
@@ -38,16 +37,19 @@
         "eslint-plugin-vue": "^5.1.0",
         "jsdom": "^13.1.0",
         "jsdom-global": "^3.0.2",
-        "laravel-mix": "^1.0",
         "laravel-nova": "^1.0",
         "require-extension-hooks": "^0.3.3",
         "require-extension-hooks-babel": "^0.1.1",
         "require-extension-hooks-vue": "^2.0.0",
+        "resolve-url-loader": "2.3.1",
+        "sass": "^1.16.0",
+        "sass-loader": "^7.1.0",
         "shortid": "^2.2.13",
         "vue-template-compiler": "^2.5.22",
         "vue-test-utils": "^1.0.0-beta.11"
     },
     "dependencies": {
+        "laravel-mix": "^4.0.13",
         "vue": "^2.5.0"
     },
     "ava": {
