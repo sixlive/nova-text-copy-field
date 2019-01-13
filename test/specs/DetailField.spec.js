@@ -18,7 +18,6 @@ test('It should render an `<panel-item>`.', (t) => {
     })
 
     t.true(wrapper.is('panel-item'))
-    t.true(wrapper.contains(CopyButton))
 })
 
 test('It should contain a `<copy-button>`.', (t) => {
