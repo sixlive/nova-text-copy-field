@@ -10,7 +10,7 @@ module.exports = {
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: [
     'standard',
-    "plugin:vue/recommended"
+    'plugin:vue/recommended'
   ],
   // required to lint *.vue files
   plugins: [
@@ -24,5 +24,11 @@ module.exports = {
     'generator-star-spacing': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+  },
+  'overrides': {
+    'files': ['*.js', '*.vue'],
+    'rules': {
+      'vue/require-prop-types': 'off'
+    }
   }
 }
