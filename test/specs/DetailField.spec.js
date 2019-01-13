@@ -29,3 +29,56 @@ test('It should contain a `<copy-button>`.', (t) => {
 
     t.true(wrapper.contains(CopyButton))
 })
+
+test('It should render the value unfiltered', (t) => {
+    const wrapper = shallow(DetailField, {
+      propsData: {
+        field
+      }
+    })
+
+
+  t.is(wrapper.find('panel-item > div > div').text(), field.value)
+})
+
+test('It should render the value with a mask', (t) => {
+  field.masked = true
+  field.masked_character = 'X'
+
+    const wrapper = shallow(DetailField, {
+      propsData: {
+        field
+      }
+    })
+
+
+  t.is(wrapper.find('panel-item > div > div').text(), 'XXXXXXXXXXXXXX')
+})
+
+test('It should render a truncated value', (t) => {
+  field.truncate = 4
+
+    const wrapper = shallow(DetailField, {
+      propsData: {
+        field
+      }
+    })
+
+
+  t.is(wrapper.find('panel-item > div > div').text(), 'Exam...')
+})
+
+test('It should render a truncated and masked value', (t) => {
+  field.masked = true
+  field.masked_character = 'X'
+  field.truncate = 4
+
+    const wrapper = shallow(DetailField, {
+      propsData: {
+        field
+      }
+    })
+
+
+  t.is(wrapper.find('panel-item > div > div').text(), 'XXXXXXX')
+})

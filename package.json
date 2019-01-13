@@ -33,6 +33,7 @@
         ],
         "files": [
             "./test/**/*.spec.js"
-        ]
+        ],
+        "cache": true
     }
 }
