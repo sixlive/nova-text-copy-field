@@ -41,12 +41,12 @@ test('It should render the value unfiltered', (t) => {
 })
 
 test('It should render the value with a mask', (t) => {
-  field.masked = true
-  field.masked_character = 'X'
-
   const wrapper = shallow(DetailField, {
     propsData: {
-      field
+      field: Object.assign({}, field, {
+        masked: true,
+        masked_character: 'X'
+      })
     }
   })
 
@@ -54,11 +54,11 @@ test('It should render the value with a mask', (t) => {
 })
 
 test('It should render a truncated value', (t) => {
-  field.truncate = 4
-
   const wrapper = shallow(DetailField, {
     propsData: {
-      field
+      field: Object.assign({}, field, {
+        truncate: 4
+      })
     }
   })
 
@@ -66,13 +66,13 @@ test('It should render a truncated value', (t) => {
 })
 
 test('It should render a truncated and masked value', (t) => {
-  field.masked = true
-  field.masked_character = 'X'
-  field.truncate = 4
-
   const wrapper = shallow(DetailField, {
     propsData: {
-      field
+      field: Object.assign({}, field, {
+        truncate: 4,
+        masked: true,
+        masked_character: 'X'
+      })
     }
   })
 
