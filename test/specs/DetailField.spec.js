@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import test from 'ava'
 
 import DetailField from '../../resources/js/components/DetailField.vue'
@@ -10,8 +10,16 @@ const field = {
   mask: false
 }
 
-test('It should render an `<panel-item>`.', (t) => {
-  const wrapper = shallow(DetailField, {
+const PanelItem = {
+  name: 'panel-item',
+  props: ['field'],
+  render: function (h) {
+    return h('div', {attrs: { id: 'panel-item' }}, this.$slots.value)
+  }
+}
+
+test('It should render an <panel-item>', (t) => {
+  const wrapper = shallowMount(DetailField, {
     propsData: {
       field
     }
@@ -20,8 +28,11 @@ test('It should render an `<panel-item>`.', (t) => {
   t.true(wrapper.is('panel-item'))
 })
 
-test('It should contain a `<copy-button>`.', (t) => {
-  const wrapper = shallow(DetailField, {
+test('It should contain a <copy-button>', (t) => {
+  const wrapper = shallowMount(DetailField, {
+    stubs: {
+      PanelItem
+    },
     propsData: {
       field
     }
@@ -31,17 +42,23 @@ test('It should contain a `<copy-button>`.', (t) => {
 })
 
 test('It should render the value unfiltered', (t) => {
-  const wrapper = shallow(DetailField, {
+  const wrapper = shallowMount(DetailField, {
+    stubs: {
+      PanelItem
+    },
     propsData: {
       field
     }
   })
 
-  t.is(wrapper.find('panel-item > div > div').text(), field.value)
+  t.is(wrapper.find('#panel-item > div > div').text(), field.value)
 })
 
 test('It should render the value with a mask', (t) => {
-  const wrapper = shallow(DetailField, {
+  const wrapper = shallowMount(DetailField, {
+    stubs: {
+      PanelItem
+    },
     propsData: {
       field: Object.assign({}, field, {
         masked: true,
@@ -50,11 +67,14 @@ test('It should render the value with a mask', (t) => {
     }
   })
 
-  t.is(wrapper.find('panel-item > div > div').text(), 'XXXXXXXXXXXXXX')
+  t.is(wrapper.find('#panel-item > div > div').text(), 'XXXXXXXXXXXXXX')
 })
 
 test('It should render a truncated value', (t) => {
-  const wrapper = shallow(DetailField, {
+  const wrapper = shallowMount(DetailField, {
+    stubs: {
+      PanelItem
+    },
     propsData: {
       field: Object.assign({}, field, {
         truncate: 4
@@ -62,11 +82,14 @@ test('It should render a truncated value', (t) => {
     }
   })
 
-  t.is(wrapper.find('panel-item > div > div').text(), 'Exam...')
+  t.is(wrapper.find('#panel-item > div > div').text(), 'Exam...')
 })
 
 test('It should render a truncated and masked value', (t) => {
-  const wrapper = shallow(DetailField, {
+  const wrapper = shallowMount(DetailField, {
+    stubs: {
+      PanelItem
+    },
     propsData: {
       field: Object.assign({}, field, {
         truncate: 4,
@@ -76,5 +99,5 @@ test('It should render a truncated and masked value', (t) => {
     }
   })
 
-  t.is(wrapper.find('panel-item > div > div').text(), 'XXXXXXX')
+  t.is(wrapper.find('#panel-item > div > div').text(), 'XXXXXXX')
 })
