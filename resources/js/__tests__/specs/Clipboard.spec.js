@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
 import test from 'ava'
 
-import Clipboard from '../../resources/js/components/Clipboard.vue'
-import ClipboardIcon from '../../resources/js/components/Icons/Clipboard.vue'
+import Clipboard from '../../components/Clipboard.vue'
+import ClipboardIcon from '../../components/Icons/Clipboard.vue'
 
 test('It should render an `<button>`.', (t) => {
   const wrapper = shallowMount(Clipboard, {

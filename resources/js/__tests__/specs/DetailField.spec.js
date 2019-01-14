@@ -2,9 +2,9 @@ import { shallowMount } from '@vue/test-utils'
 import test from 'ava'
 import sinon from 'sinon'
 
-import * as filterField from '../../resources/js/filterField'
-import DetailField from '../../resources/js/components/DetailField.vue'
-import CopyButton from '../../resources/js/components/CopyButton.vue'
+import * as filterField from '../../filterField'
+import DetailField from '../../components/DetailField.vue'
+import CopyButton from '../../components/CopyButton.vue'
 
 const field = {
   value: 'Example String',

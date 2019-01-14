@@ -1,5 +1,5 @@
 import test from 'ava'
-import filterField from '../../resources/js/filterField'
+import filterField from '../../filterField'
 
 test('It will truncate a field', (t) => {
   const filtered = filterField({
