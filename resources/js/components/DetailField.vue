@@ -17,7 +17,7 @@
 
 <script>
 import CopyButton from './CopyButton'
-import filterField from '../utilities'
+import { filterField } from '../utilities'
 
 export default {
   components: {

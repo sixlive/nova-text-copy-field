@@ -1,4 +1,4 @@
-export default function filterField (field) {
+export function filterField (field) {
   return [
     truncateField,
     maskField
@@ -22,3 +22,5 @@ function maskField ([ field, display ]) {
       : display
   ]
 }
+
+export default filterField

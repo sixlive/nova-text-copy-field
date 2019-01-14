@@ -45,6 +45,8 @@
         "sass": "^1.16.0",
         "sass-loader": "^7.1.0",
         "shortid": "^2.2.13",
+        "sinon": "^7.2.2",
+        "sisyphos": "^1.1.1",
         "vue-template-compiler": "^2.5.22"
     },
     "dependencies": {
