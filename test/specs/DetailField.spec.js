@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import test from 'ava'
 
-import * as utils from '../../resources/js/utilities'
+import * as filterField from '../../resources/js/filterField'
 
 import DetailField from '../../resources/js/components/DetailField.vue'
 import CopyButton from '../../resources/js/components/CopyButton.vue'
@@ -48,7 +48,7 @@ test('It should contain a <copy-button>', (t) => {
 })
 
 test('It renders the value using the filter', (t) => {
-  const spy = sinon.spy(utils, 'filterField')
+  const spy = sinon.spy(filterField, 'default')
 
   const wrapper = shallowMount(DetailField, {
     stubs: {
