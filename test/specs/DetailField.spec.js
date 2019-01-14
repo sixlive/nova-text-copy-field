@@ -1,16 +1,15 @@
 import { shallowMount } from '@vue/test-utils'
 import test from 'ava'
+import sinon from 'sinon'
 
 import * as filterField from '../../resources/js/filterField'
-
 import DetailField from '../../resources/js/components/DetailField.vue'
 import CopyButton from '../../resources/js/components/CopyButton.vue'
-const sinon = require('sinon')
 
 const field = {
   value: 'Example String',
   truncate: false,
-  mask: false
+  masked: false
 }
 
 const PanelItem = {
