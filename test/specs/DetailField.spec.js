@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import test from 'ava'
 
 import DetailField from '../../resources/js/components/DetailField.vue'
@@ -14,7 +14,7 @@ const PanelItem = {
   name: 'panel-item',
   props: ['field'],
   render: function (h) {
-    return h('div', {attrs: { id: 'panel-item' }}, this.$slots.value)
+    return h('div', { attrs: { id: 'panel-item' } }, this.$slots.value)
   }
 }
 

@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import test from 'ava'
 
 import Clipboard from '../../resources/js/components/Clipboard.vue'
