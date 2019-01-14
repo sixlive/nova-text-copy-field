@@ -373,7 +373,7 @@ exports.default = void 0;
 
 var _CopyButton = _interopRequireDefault(__webpack_require__(/*! ./CopyButton */ "./resources/js/components/CopyButton.vue"));
 
-var _utilities = _interopRequireDefault(__webpack_require__(/*! ../utilities */ "./resources/js/utilities.js"));
+var _filterField = _interopRequireDefault(__webpack_require__(/*! ../filterField */ "./resources/js/filterField.js"));
 
 //
 //
@@ -399,7 +399,7 @@ var _default = {
   props: ['resource', 'resourceName', 'resourceId', 'field'],
   computed: {
     fieldDisplayValue: function fieldDisplayValue() {
-      return (0, _utilities.default)(this.field);
+      return (0, _filterField.default)(this.field);
     }
   }
 };
@@ -491,7 +491,7 @@ exports.default = void 0;
 
 var _CopyButton = _interopRequireDefault(__webpack_require__(/*! ./CopyButton */ "./resources/js/components/CopyButton.vue"));
 
-var _utilities = _interopRequireDefault(__webpack_require__(/*! ../utilities */ "./resources/js/utilities.js"));
+var _filterField = _interopRequireDefault(__webpack_require__(/*! ../filterField */ "./resources/js/filterField.js"));
 
 //
 //
@@ -512,7 +512,7 @@ var _default = {
   props: ['resourceName', 'field'],
   computed: {
     fieldDisplayValue: function fieldDisplayValue() {
-      return (0, _utilities.default)(this.field);
+      return (0, _filterField.default)(this.field);
     }
   }
 };
@@ -13237,6 +13237,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
+/* eslint-disable-next-line no-undef */
 Nova.booting(function (Vue, router) {
   Vue.component('index-text-copy', __webpack_require__(/*! ./components/IndexField */ "./resources/js/components/IndexField.vue"));
   Vue.component('detail-text-copy', __webpack_require__(/*! ./components/DetailField */ "./resources/js/components/DetailField.vue"));
@@ -13245,10 +13246,10 @@ Nova.booting(function (Vue, router) {
 
 /***/ }),
 
-/***/ "./resources/js/utilities.js":
-/*!***********************************!*\
-  !*** ./resources/js/utilities.js ***!
-  \***********************************/
+/***/ "./resources/js/filterField.js":
+/*!*************************************!*\
+  !*** ./resources/js/filterField.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
