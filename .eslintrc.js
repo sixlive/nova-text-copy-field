@@ -6,6 +6,7 @@ module.exports = {
   },
   env: {
     browser: true,
+    "jest/globals": true
   },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: [
@@ -14,7 +15,8 @@ module.exports = {
   ],
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html',
+    'jest'
   ],
   // add your custom rules here
   'rules': {

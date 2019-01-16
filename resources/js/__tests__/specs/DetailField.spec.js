@@ -1,5 +1,4 @@
 import { shallowMount } from '@vue/test-utils'
-import test from 'ava'
 import sinon from 'sinon'
 
 import * as filterField from '../../filterField'
@@ -20,44 +19,46 @@ const PanelItem = {
   }
 }
 
-test('It should render an <panel-item>', (t) => {
-  const wrapper = shallowMount(DetailField, {
-    stubs: {
-      PanelItem
-    },
-    propsData: {
-      field
-    }
+describe('DetailField.vue', () => {
+  it('It should render an <panel-item>', () => {
+    const wrapper = shallowMount(DetailField, {
+      stubs: {
+        PanelItem
+      },
+      propsData: {
+        field
+      }
+    })
+
+    expect(wrapper.is('#panel-item')).toBe(true)
   })
 
-  t.true(wrapper.is('#panel-item'))
-})
+  it('It should contain a <copy-button>', () => {
+    const wrapper = shallowMount(DetailField, {
+      stubs: {
+        PanelItem
+      },
+      propsData: {
+        field
+      }
+    })
 
-test('It should contain a <copy-button>', (t) => {
-  const wrapper = shallowMount(DetailField, {
-    stubs: {
-      PanelItem
-    },
-    propsData: {
-      field
-    }
+    expect(wrapper.contains(CopyButton)).toBe(true)
   })
 
-  t.true(wrapper.contains(CopyButton))
-})
+  it('It renders the value using the filter', () => {
+    const spy = sinon.spy(filterField, 'default')
 
-test('It renders the value using the filter', (t) => {
-  const spy = sinon.spy(filterField, 'default')
+    const wrapper = shallowMount(DetailField, {
+      stubs: {
+        PanelItem
+      },
+      propsData: {
+        field
+      }
+    })
 
-  const wrapper = shallowMount(DetailField, {
-    stubs: {
-      PanelItem
-    },
-    propsData: {
-      field
-    }
+    expect(spy.calledWith(field)).toBe(true)
+    expect(wrapper.find('#panel-item > div > div').text()).toBe(field.value)
   })
-
-  t.true(spy.calledWith(field))
-  t.is(wrapper.find('#panel-item > div > div').text(), field.value)
 })

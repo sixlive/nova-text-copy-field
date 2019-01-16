@@ -1,25 +1,26 @@
 import { shallowMount } from '@vue/test-utils'
-import test from 'ava'
 
 import Clipboard from '../../components/Clipboard.vue'
 import ClipboardIcon from '../../components/Icons/Clipboard.vue'
 
-test('It should render an `<button>`.', (t) => {
-  const wrapper = shallowMount(Clipboard, {
-    propsData: {
-      value: 'Example Value'
-    }
+describe('Clipboard.vue', () => {
+  it('It should render an `<button>`.', () => {
+    const wrapper = shallowMount(Clipboard, {
+      propsData: {
+        value: 'Example Value'
+      }
+    })
+
+    expect(wrapper.is('button')).toBe(true)
   })
 
-  t.true(wrapper.is('button'))
-})
+  it('It should contain a `<clipboard-icon>`.', () => {
+    const wrapper = shallowMount(Clipboard, {
+      propsData: {
+        value: 'Example Value'
+      }
+    })
 
-test('It should contain a `<clipboard-icon>`.', (t) => {
-  const wrapper = shallowMount(Clipboard, {
-    propsData: {
-      value: 'Example Value'
-    }
+    expect(wrapper.contains(ClipboardIcon)).toBe(true)
   })
-
-  t.true(wrapper.contains(ClipboardIcon))
 })

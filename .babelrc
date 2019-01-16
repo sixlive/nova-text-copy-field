@@ -1,12 +1,16 @@
 {
-  "presets": [
-    "@babel/preset-env",
-    "babel-preset-vue"
-  ],
-  "plugins": [
-    "@babel/plugin-transform-runtime",
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-transform-modules-commonjs"
-  ]
+    "env": {
+        "test": {
+            "presets": [
+                [
+                    "env",
+                    {
+                        "targets": {
+                            "node": "current"
+                        }
+                    }
+                ]
+            ]
+        }
+    }
 }

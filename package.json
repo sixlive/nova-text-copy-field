@@ -8,23 +8,15 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "test": "nyc ava",
-        "coverage": "nyc ava",
+        "test": "jest --coverage",
         "lint": "eslint --ext .js,.vue resources/js/**/*.js",
         "lint:fix": "npm run lint -- --fix"
     },
     "devDependencies": {
-        "@babel/plugin-proposal-pipeline-operator": "^7.2.0",
-        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-        "@babel/plugin-transform-runtime": "^7.2.0",
-        "@babel/preset-env": "^7.2.3",
-        "@babel/register": "^7.0.0",
-        "@babel/runtime": "^7.2.0",
-        "ava": "^1.1.0",
-        "babel-core": "^6.26.3",
+        "@vue/test-utils": "^1.0.0-beta.28",
         "babel-eslint": "^10.0.1",
-        "babel-loader": "^8.0.5",
-        "babel-preset-vue": "^2.0.2",
+        "babel-jest": "^23.6.0",
+        "babel-preset-env": "^1.7.0",
         "clipboard": "^2.0.1",
         "cross-env": "^5.0.0",
         "eslint": "^5.12.0",
@@ -32,47 +24,44 @@
         "eslint-loader": "^2.1.1",
         "eslint-plugin-html": "^5.0.0",
         "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jest": "^22.1.3",
         "eslint-plugin-node": "^8.0.1",
         "eslint-plugin-promise": "^4.0.1",
         "eslint-plugin-standard": "^4.0.0",
         "eslint-plugin-vue": "^5.1.0",
-        "jsdom": "^13.1.0",
-        "jsdom-global": "^3.0.2",
+        "jest": "^23.6.0",
+        "jest-serializer-vue": "^2.0.2",
         "laravel-nova": "^1.0",
-        "nyc": "^13.1.0",
-        "require-extension-hooks": "^0.3.3",
-        "require-extension-hooks-babel": "^0.1.1",
-        "require-extension-hooks-vue": "^2.0.0",
         "resolve-url-loader": "2.3.1",
         "sass": "^1.16.0",
         "sass-loader": "^7.1.0",
         "shortid": "^2.2.13",
         "sinon": "^7.2.2",
-        "sisyphos": "^1.1.1",
+        "vue-jest": "^3.0.2",
         "vue-template-compiler": "^2.5.22"
     },
     "dependencies": {
-        "@vue/test-utils": "^1.0.0-beta.28",
         "laravel-mix": "^4.0.13",
         "vue": "^2.5.0"
     },
-    "ava": {
-        "require": [
-            "./resources/js/__tests__/helpers/setup.js"
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "vue"
         ],
-        "files": [
-            "./resources/js/__tests__/**/*.spec.js"
+        "moduleNameMapper": {
+            "^@/(.*)$": "<rootDir>/resources/assets/js/components/$1"
+        },
+        "transform": {
+            "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+            ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+        },
+        "snapshotSerializers": [
+            "<rootDir>/node_modules/jest-serializer-vue"
         ],
-        "sources": [
-            "resources/js/**/*.js"
-        ],
-        "cache": true,
-        "failFast": true
-    },
-    "nyc": {
-		"extension": [
-			".js",
-			".vue"
-		]
-	}
+        "testPathIgnorePatterns": [
+            "/node_modules/",
+            "/vendor/"
+        ]
+    }
 }

@@ -1,32 +1,33 @@
-import test from 'ava'
 import filterField from '../../filterField'
 
-test('It will truncate a field', (t) => {
-  const filtered = filterField({
-    value: 'Example Value',
-    truncate: 4
+describe('filterField', () => {
+  it('It will truncate a field', () => {
+    const filtered = filterField({
+      value: 'Example Value',
+      truncate: 4
+    })
+
+    expect(filtered).toBe('Exam...')
   })
 
-  t.is(filtered, 'Exam...')
-})
+  it('It will mask a field', () => {
+    const filtered = filterField({
+      value: 'Example Value',
+      masked: true,
+      masked_character: 'X'
+    })
 
-test('It will mask a field', (t) => {
-  const filtered = filterField({
-    value: 'Example Value',
-    masked: true,
-    masked_character: 'X'
+    expect(filtered).toBe('XXXXXXXXXXXXX')
   })
 
-  t.is(filtered, 'XXXXXXXXXXXXX')
-})
+  it('It will mask and truncate a field', () => {
+    const filtered = filterField({
+      value: 'Example Value',
+      truncate: 4,
+      masked: true,
+      masked_character: 'X'
+    })
 
-test('It will mask and truncate a field', (t) => {
-  const filtered = filterField({
-    value: 'Example Value',
-    truncate: 4,
-    masked: true,
-    masked_character: 'X'
+    expect(filtered).toBe('XXXXXXX')
   })
-
-  t.is(filtered, 'XXXXXXX')
 })
