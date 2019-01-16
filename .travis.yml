@@ -1,0 +1,23 @@
+sudo: required
+language: php
+dist: trusty
+
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+
+cache:
+  yarn: true
+  directories:
+    - $HOME/.composer/cache/files
+
+before_script:
+  - nvm install node
+  - npm install -g yarn
+  - yarn
+  - yarn run dev -- --progress=false
+
+script:
+  - yarn lint
+  - yarn test
