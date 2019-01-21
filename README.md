@@ -57,6 +57,23 @@ TextCopy::make('Some Field', 'some_field')
     ->copyButtonTitle('Some alternative title')
 ```
 
+### Alternative copy value
+You can choose to mutate and that is copied to the users clipboard. You can either pass a value or a Closure.
+
+```php
+TextCopy::make('Some Secret String', 'some_long_string')
+    ->copyValue(function ($value) {
+        return substr($value, -6);
+    })
+```
+
+or 
+
+```php
+TextCopy::make('Some Secret String', 'some_long_string')
+    ->copyValue('some fixed copy value')
+```
+
 ## Screenshots
 ### Default State
 ![default](.docs/default.png)
