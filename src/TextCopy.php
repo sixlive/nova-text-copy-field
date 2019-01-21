@@ -45,7 +45,7 @@ class TextCopy extends Field
     public function copyButtonTitle($title = '')
     {
         $this->withMeta([
-            'copy_button_title' => $title
+            'copy_button_title' => $title,
         ]);
 
         return $this;
