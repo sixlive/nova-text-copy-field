@@ -47,6 +47,16 @@ TextCopy::make('Some Secret String', 'some_secret_string')
     ->truncate(5)
 ```
 
+### Copy button title
+The title of the copy button defaults to the field name prefixed with 'Copy'. For example, `TextCopy::make('Some Field', 'some_field')` the button title will be "Copy Some Field".
+
+If you would like to manually set the title you can use the `copyButtonTitle()` method.
+
+```php
+TextCopy::make('Some Field', 'some_field')
+    ->copyButtonTitle('Some alternative title')
+```
+
 ## Screenshots
 ### Default State
 ![default](.docs/default.png)
