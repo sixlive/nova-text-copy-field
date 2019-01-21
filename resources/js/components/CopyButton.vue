@@ -4,7 +4,8 @@
             <clipboard
                 @success="handleSuccess"
                 @error="handleError"
-                :value="value" />
+                :value="value"
+                :title="title" />
         </div>
 
         <div v-show="success">
@@ -23,7 +24,7 @@ import SuccessIcon from './Icons/Success'
 import ErrorIcon from './Icons/Error'
 
 export default {
-    props: ['value'],
+    props: ['value', 'title'],
     components: {
         Clipboard,
         SuccessIcon,

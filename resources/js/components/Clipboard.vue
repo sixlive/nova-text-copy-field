@@ -3,6 +3,7 @@
         @click.stop="handleClick"
         type="button"
         :ref="identifier"
+        :title="title"
         class="text-70 appearance-none outline-none focus:outline-none cursor-pointer hover:text-primary block">
         <clipboard-icon />
     </button>
@@ -15,7 +16,7 @@ import ClipboardIcon from './Icons/Clipboard'
 
 export default {
     components: { ClipboardIcon },
-    props: ['value'],
+    props: ['value', 'title'],
     data () {
         return {
             clipboard: null,

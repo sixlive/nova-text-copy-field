@@ -1,4 +1,4 @@
-export default function filterField (field) {
+export function filterField (field) {
     return [
         truncateField,
         maskField
@@ -22,3 +22,9 @@ function maskField ([ field, display ]) {
             : display
     ]
 }
+
+export function copyButtonTitle (field) {
+    return field.copy_button_title || `Copy ${field.name}`
+}
+
+export default filterField
