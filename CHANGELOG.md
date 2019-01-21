@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.3.0] - 2019-01-21
+### Added
+* Copy button title w/override ([#18](https://github.com/sixlive/nova-text-copy-field/pull/18))
+* Copy value resolver ([#19](https://github.com/sixlive/nova-text-copy-field/pull/19))
+
 ## [1.2.1] - 2018-12-06
 ### Changed
 * Removed some unnecessary export statements ([#15](https://github.com/sixlive/nova-text-copy-field/pull/15))
