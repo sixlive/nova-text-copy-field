@@ -1,11 +1,12 @@
 <template>
-    <span class="flex">
+    <div class="flex" @mouseover="hover = true" @mouseleave="hover = false">
         <div class="flex-no-shrink">{{ fieldDisplayValue }}</div>
         <copy-button
             :value="copyFieldValue"
             :title="copyButtonTitleValue"
-            class="w-4 mx-3" />
-    </span>
+            :class="['w-4 mx-3', {'invisible': ! shouldShowButton}]"
+        />
+    </div>
 </template>
 
 <script>
@@ -15,6 +16,11 @@ import { filterField, copyButtonTitle, copyValue } from '../utilities'
 export default {
     components: { CopyButton },
     props: ['resourceName', 'field'],
+    data() {
+        return {
+            hover: false
+        }
+    },
      computed: {
         fieldDisplayValue() {
             return filterField(this.field)
@@ -24,6 +30,13 @@ export default {
         },
         copyFieldValue() {
             return copyValue(this.field)
+        },
+        shouldShowButton() {
+            if (this.field.show_button_on_hover) {
+                return this.hover
+            }
+
+            return true
         }
     }
 }
