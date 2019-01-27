@@ -4,7 +4,7 @@
         type="button"
         :ref="identifier"
         :title="title"
-        class="text-70 appearance-none outline-none focus:outline-none cursor-pointer hover:text-primary block">
+        class="text-70 appearance-none outline-none focus:outline-none cursor-pointer">
         <clipboard-icon />
     </button>
 </template>
