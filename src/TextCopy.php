@@ -47,6 +47,12 @@ class TextCopy extends Field
         return $this;
     }
 
+    /**
+     * Set the copy button's title attribute.
+     *
+     * @param  string  $title
+     * @return \Sixlive\TextCopy\TextCopy
+     */
     public function copyButtonTitle($title = '')
     {
         $this->withMeta([
@@ -56,6 +62,12 @@ class TextCopy extends Field
         return $this;
     }
 
+    /**
+     * Mutate the value that will be copied.
+     *
+     * @param  string|int|Closure $value
+     * @return \Sixlive\TextCopy\TextCopy
+     */
     public function copyValue($value)
     {
         $this->withMeta([
