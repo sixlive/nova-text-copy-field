@@ -74,6 +74,12 @@ TextCopy::make('Some Secret String', 'some_long_string')
     ->copyValue('some fixed copy value')
 ```
 
+### Only displaying the button on hover
+```php
+TextCopy::make('Some Secret String', 'some_long_string')
+    ->showButtonOnlyOnHover()
+```
+
 ## Screenshots
 ### Default State
 ![default](.docs/default.png)

@@ -14,6 +14,10 @@ class TextCopy extends Field
      */
     public $component = 'text-copy';
 
+    public $meta = [
+        'show_button_on_hover' => false,
+    ];
+
     /**
      * Truncate the fields displayed value.
      *
@@ -58,6 +62,20 @@ class TextCopy extends Field
             'copy_value' => $value instanceof Closure
                 ? $value($this->value)
                 : $value,
+        ]);
+
+        return $this;
+    }
+
+    /**
+     * Hide the copy button until a user hovers over the field value.
+     *
+     * @return \Sixlive\TextCopy\TextCopy
+     */
+    public function showButtonOnlyOnHover()
+    {
+        $this->withMeta([
+            'show_button_on_hover' => true,
         ]);
 
         return $this;
