@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.4.0] - 2019-01-30
+### Changed
+* Added missing docblocks ([#c2b0855](https://github.com/sixlive/nova-text-copy-field/commit/c2b08557fcf0299c11489590973ffcb75597ca93))
+
 ### Added
 * Only showing the button on hover ([#25](https://github.com/sixlive/nova-text-copy-field/pull/25))
 
