@@ -33,7 +33,8 @@
         "sass-loader": "^7.1.0",
         "shortid": "^2.2.13",
         "sinon": "^7.2.2",
-        "vue-template-compiler": "^2.5.21"
+        "vue-template-compiler": "^2.5.21",
+        "webpack-cli": "^3.2.3"
     },
     "dependencies": {
         "laravel-mix": "^4.0.13",
