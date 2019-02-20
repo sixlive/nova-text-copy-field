@@ -1,36 +1,15 @@
 module.exports = {
   root: true,
-  parserOptions: {
-    sourceType: 'module',
-    parser: 'babel-eslint'
-  },
   env: {
-    browser: true,
-    "jest/globals": true
+    node: true,
+    jest: true
   },
-  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: [
-    'standard',
-    'plugin:vue/recommended'
-  ],
-  // required to lint *.vue files
-  plugins: [
-    'html',
-    'jest'
-  ],
-  // add your custom rules here
-  'rules': {
-    // allow paren-less arrow functions
-    'arrow-parens': 0,
-    // allow async-await
-    'generator-star-spacing': 0,
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+  extends: ["plugin:vue/essential", "@vue/prettier"],
+  rules: {
+    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
   },
-  'overrides': {
-    'files': ['*.js', '*.vue'],
-    'rules': {
-      'vue/require-prop-types': 'off'
-    }
+  parserOptions: {
+    parser: "babel-eslint"
   }
-}
+};
