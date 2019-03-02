@@ -1,7 +1,7 @@
 <template>
     <default-field :field="field" :errors="errors">
         <template slot="field">
-            <div class="flex content-center">
+            <div class="flex content-center items-center">
                 <input :id="field.name" type="text"
                     class="flex-1 form-input form-input-bordered form-control"
                     :class="errorClasses"
