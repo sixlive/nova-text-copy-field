@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.5.0] 2019-03-03
+###  Added
+* Copy button to form field ([#26](https://github.com/sixlive/nova-text-copy-field/pull/26))
+
 ## [1.4.0] - 2019-01-30
 ### Changed
 * Added missing docblocks ([#c2b0855](https://github.com/sixlive/nova-text-copy-field/commit/c2b08557fcf0299c11489590973ffcb75597ca93))
