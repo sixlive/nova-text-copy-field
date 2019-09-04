@@ -9,7 +9,7 @@ function truncateField ([field, display]) {
     return [
         field,
         display && field.truncate > 0
-            ?  `${display.substring(0, field.truncate)}...`
+            ?  `${display.substring(0, field.truncate)}${display.length > field.truncate ? '...' : ''}`
             : display
     ]
 }
