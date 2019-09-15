@@ -6,6 +6,7 @@
                     class="flex-1 form-input form-input-bordered form-control"
                     :class="errorClasses"
                     :placeholder="field.name"
+                    :disabled="isReadonly"
                     v-model="value"
                 />
                 <copy-button
